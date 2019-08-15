@@ -15,7 +15,7 @@ let dvd;
 let r, g, b;
 
 function preload() {
-  dvd = loadImage("Ouisuk.png");
+  dvd = loadImage("Ouisuk-small.png");
 }
 
 function setup() {
