@@ -64,4 +64,10 @@ function draw() {
     y = 0;
     pickColor();
   }
+  dvd.onclick(increaseSpeed());
+}
+
+function increaseSpeed(){
+  xspeed++;
+  yspeed++;
 }
