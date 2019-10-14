@@ -22,8 +22,8 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   x = random(width);
   y = random(height);
-  xspeed = 5;
-  yspeed = 5;
+  xspeed = 2;
+  yspeed = 2;
   pickColor();
 }
 
@@ -67,6 +67,47 @@ function draw() {
 }
 
 function increaseSpeed(){
-  xspeed++;
-  yspeed++;
+  createCanvas(windowWidth, windowHeight);
+  if(xspeed < 0)
+  {
+    xspeed--;
+  }
+  else if (xspeed > 0)
+  {
+    xspeed++;
+  }
+  
+  if(yspeed > 0)
+  {
+    yspeed++;
+  }
+  else if(xspeed < 0)
+  {
+    yspeed--;
+  }
+  pickColor();
+}
+
+function increaseSpeedby(num){
+  createCanvas(windowWidth, windowHeight);
+  if(xspeed < 0)
+  {
+    xspeed=xspeed-num;
+  }
+  else if (xspeed > 0)
+  {
+    xspeed=xspeed+num;
+  }
+  
+  if(yspeed > 0)
+  {
+    yspeed = yspeed + num;
+  }
+  else if(xspeed < 0)
+  {
+    yspeed = yspeed - num;
+  }
+  pickColor();
+
+  print("Speed = " + Math.abs(xspeed) + ", " + Math.abs(yspeed));
 }
