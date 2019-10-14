@@ -1,5 +1,5 @@
-// Bouncing DVD Logo
-// Daniel Shiffman
+// Based off of Bouncing DVD Logo by Daniel Shiffman
+// Henry Borsuk
 // https://thecodingtrain.com/CodingChallenges/131-bouncing-dvd-logo.html
 // https://youtu.be/0j86zuqqTlQ
 // https://editor.p5js.org/codingtrain/sketches/Ya1K1ngtFk
@@ -18,6 +18,13 @@ function preload() {
   dvd = loadImage("Ouisuk-small.png");
 }
 
+//let currentWidth = windowWidth;
+//let currentHeight = windowHeight;
+
+window.addEventListener("resize", function(event) {
+  createCanvas(windowWidth,windowHeight)
+})
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   x = random(width);
@@ -25,13 +32,14 @@ function setup() {
   xspeed = 2;
   yspeed = 2;
   pickColor();
+
 }
 
 function pickColor() {
   r = random(100, 256);
   g = random(100, 256);
   b = random(100, 256);
-
+  
 }
 
 function draw() {
